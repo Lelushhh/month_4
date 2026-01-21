@@ -1,5 +1,4 @@
 {% load static %}
-
 {% include '../header.html' %}
 
 <link rel="stylesheet" href="{% static 'styles/style.css' %}">
@@ -17,7 +16,6 @@
                 {% endif %}
             </div>
 
-            <!-- ИМЯ + ФАМИЛИЯ В ОДНУ СТРОКУ -->
             <h3 class="news-name">
                 {{ i.name_basket }} {{ i.surname }}
             </h3>
@@ -32,8 +30,15 @@
                     <span>📅 {{ i.created_at }}</span>
                 </p>
 
-                <a href="/basket_list/{{i.id}}/update/", class="card-btn">Обновить 🆙</a>
-                <a href="/basket_list/{{i.id}}/delete/", class="card-btn">Удалить 🚫</a>
+                <!-- UPDATE -->
+                <a href="{% url 'update' i.id %}" class="card-btn">
+                    Обновить 🆙
+                </a>
+
+                <!-- DELETE -->
+                <a href="{% url 'delete' i.id %}" class="card-btn">
+                    Удалить 🚫
+                </a>
             </div>
 
         </li>

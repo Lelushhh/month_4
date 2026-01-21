@@ -9,7 +9,7 @@
     <div class="basket-wrapper">
         <h1 class="basket-title">Добавить продукт</h1>
 
-        <form action="{% url 'create_basket' %}" method="post" class="basket-form">
+        <form action="{% url 'basket_create' %}" method="post" class="basket-form">
             {% csrf_token %}
             {{ form.as_p }}
 
